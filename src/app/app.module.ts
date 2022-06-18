@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { CreateComponent } from './components/create/create.component';
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router';
       {path:'create',component:CreateComponent},
       {path:'edit/:id',component:EditComponent},
       {path:'index',component:IndexComponent}
-    ])
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
