@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-sm bg-light">
+<app-header></app-header>
+<nav class="navbar navbar-expand-sm bg-light"> 
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -11,9 +12,17 @@
           All add units
         </a>
       </li>
+      <li class="nav-item">
+        <a routerLink="update" class="nav-link" routerLinkActive="active">
+          Update
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
 <div class="container">
+  <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
   <router-outlet></router-outlet>
+<!-- <app-edit></app-edit> -->
 </div>

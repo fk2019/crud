@@ -1,1 +1,9 @@
-<p>edit works!</p>
+<mat-accordion multi="true" *ngIf="posts.length>0">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header *ngIf="posts">
+      {{post.title}}
+    </mat-expansion-panel-header>
+    <p>{{post.content}}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+<p *ngIf="posts.length<=0">No posts added yet!</p>

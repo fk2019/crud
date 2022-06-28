@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-
-  constructor() { }
+posts=[
+  {title:"First post", content:"the first post"},
+  {title:"Second post", content:"the second post"},
+  {title:"Third post", content:"the third post"}
+  ]
+  
+    constructor() { }
 
   ngOnInit(): void {
   }

@@ -1,17 +1,48 @@
 <div class="card">
   <div class="card-body">
-    <form>
+    <form #postform="ngForm">
       <div class="form-group">
-        <label class="col-mid-4">Unit Name</label>
+        <label class="col-mid-4">Product Name</label>
         <input type="text" class="form-control" name="unit-name">
       </div>
       <div class="form-group">
-        <label class="col-mid-4">Unit Price</label>
+        <label class="col-mid-4">Product Price</label>
         <input type="text" class="form-control" name="unit-price">
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Unit</button>
+        <label class="col-mid-4">Product Code</label>
+        <input type="text" class="form-control" name="unit-code">
       </div>
+      <div class="form-group">
+        <label class="col-mid-4">Release Date</label>
+        <input type="text" class="form-control" name="unit-rdate">
+      </div>      
+      <div class="form-group">
+        <label class="col-mid-4">Product Description</label>
+        <input type="text" class="form-control" name="unit-description">
+      </div>
+      <div class="form-group">
+        <label class="col-mid-4">Rating</label>
+        <input type="text" class="form-control" name="unit-rating">
+      </div>
+      <div  style="margin-top: 10px;">
+        <mat-progress-bar class="progress-bar" mode="determinate"
+        [value]="progress" *ngIf="progress >0"></mat-progress-bar>
+      </div>
+      <div class="form-group" style="margin-top: 10px;">        
+        <input type="file" (change)="uploadFile($event)" class="form-control" name="unit-file">
+      </div>
+      
+      <div class="form-group" style="margin-top: 10px;">
+        <button type="submit" class="btn btn-primary">Create Product</button>
+      </div>
+     
     </form>
+    <div *ngIf="message">{{message}}</div>
+    <div class="card mt-3">List of Files</div>
+    <ul class="list-group list-group-flush"
+    *ngFor="let file of filesInfo |async">
+      <li class="list-group-item"><a href="{{file.url}}">{{file.name}}</a></li>
+    </ul>
   </div>
 </div>
