@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-body">
     <form  [formGroup]="productGroup" (submit)="onSubmit(productGroup)">
-      <div class="form-group" [formGroup]="productGroup">
+      <div class="form-group">
         <label class="col-mid-4">Product Name</label>
         <input type="text" class="form-control" 
        formControlName="pname"  required >
       </div>
-      <!-- <div *ngIf="pname?.invalid && ng-touched">Product Name Required</div> -->
+    
       <div class="form-group" >
         <label class="col-mid-4">Product Price </label>
         <input type="text" class="form-control" formControlName="price"  
@@ -27,19 +27,15 @@
         <input type="text" class="form-control" formControlName="description"   
        required>
       </div>
-      <div class="form-group" >
-        <label class="col-mid-4">Rating</label>
-        <input type="text" class="form-control" formControlName="rating"   
-         required>
-      </div>
+      
       <div  style="margin-top: 10px;">
         <mat-progress-bar class="progress-bar" mode="indeterminate"
          ></mat-progress-bar>
       </div>
-      <div class="form-group">       
+      <!-- <div class="form-group">       
         <input type="file" class="form-control" formControlName="file" (change)="uploadFile($event)"
          required>
-      </div>
+      </div> -->
       
       <div class="form-group" style="margin-top: 10px;">       
        

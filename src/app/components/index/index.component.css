@@ -1,0 +1,9 @@
+table{
+  width: 1150px;
+}
+.table-container{
+  width:100%;
+  max-width: 100%;
+  /* create horizontal scrollbar on small devices to swipe right */
+  overflow: auto;
+}

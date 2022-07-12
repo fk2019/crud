@@ -16,8 +16,8 @@ export class UpdateComponent implements OnInit {
     code:new FormControl('',Validators.required),
     rdate:new FormControl('',Validators.required),
     description:new FormControl('',Validators.required),
-    rating:new FormControl(null,Validators.required),
-    file:new FormControl('',Validators.required)
+    rating:new FormControl(null,Validators.required)
+   
 
   })
 
@@ -57,8 +57,7 @@ export class UpdateComponent implements OnInit {
       code:[''],
       rdate:[''],
       desciption:[''],
-      rating:[null],
-      file:['']
+      rating:[null]      
     })   
   }
 }
@@ -73,14 +72,14 @@ onSubmit(form:FormGroup){
   })
   this.resetForm(form)
 }
-uploadFile(event:any){
-  if(event.target.files.lenght>0){
-    const file=event.targe.files[0];
-    this.productGroup.get('file')?.setValue(file)
-    console.log(file)
-  };
+// uploadFile(event:any){
+//   if(event.target.files.lenght>0){
+//     const file=event.targe.files[0];
+//     this.productGroup.get('file')?.setValue(file)
+//     console.log(file)
+//   };
 
-}
+// }
 getfromApi(){
   this.updateService.getData().subscribe({
     next(res){
